@@ -1,0 +1,24 @@
+Ans: Well, this is normally known as factory pattern or just follow the basic inheritance in Java. 
+I am going to explain the process to be implemented for the given pattern, step by step:
+
+Step#1. As the Interface is already created so far, we would need two class to be created, which are "Car" and "Plane"
+Step#2. Creating parameterized constructor for both classes (Car and Plane) with the following parameters to build the vehicle sub classes:
+         i. set_number_of_wheels [int]
+         ii. set_number_of_passenges [int] and
+         iii. has_gas [boolean]
+         
+         i.e: public Car (int wheels, int passengers, boolean gas) {
+                    this.num_of_wheels = wheels;
+                    this.num_of_passengers = passengers;
+                    this.hasGas = gas;
+              }
+Step#3. Let's implement the super class (Vehicle) components method by using 'implements' the interface which is already given.
+        After that, it becomes mandatory to implement the body of the method declaration, declared into the given interface. And so that we
+        will be '@Override' 3 methods into the sub classes.
+Step#4. Then, from our driver class and inside the 'main' method we will be creating a Car/Plane instance by passing the base components into
+        int by passing necessary parameters through it's constructors.
+        
+        Finally, Just check the car components are populated or not by printing it's components or the car object itself. i.e: 
+                  Car car = new Car(4,4,true);
+                  System.out.println("Hello world! Car: "+car.set_num_of_wheels());
+                  ...
