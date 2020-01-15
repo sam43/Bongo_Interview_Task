@@ -1,0 +1,60 @@
+This program calculates the custom media control for a MediaPlayer application
+
+// Here, 'player' is a instance of MediaPlayer
+
+function Play() {
+    player.play()
+  end
+}
+
+function Pause() {
+    player.pause()
+  end
+}
+
+// This is the method for custom seek position when user presses the forward button
+  
+    Calculate the future seek position by adding up Argument 
+    currentPosition and Argument duration.
+    Check the required cummulative time doesn't exceed the duration of the
+    media/video.
+    
+function FastForward(Argument seekingTime) { 
+    duration = player?.duration()
+    currentPosition = player?.getCurrentPosition()
+    If (currentPosition + seekingTime) <= duration
+      then player.seekTo(currentPosition + seekingTime)
+    Else
+      notify user
+end 
+} 
+
+
+function Rewind(Argument seekingTime){  
+    duration = player?.duration()
+    currentPosition = player?.getCurrentPosition()
+    currentPosition = player?.getCurrentPosition()
+    if (currentPosition - seekingTime) > 0
+        then player.seekTo(currentPosition - seekingTime)
+    else
+      notify user 
+end 
+} 
+  
+{ 
+In the main function 
+   initialze the Player
+   setup the media controller for the integrated UI
+   setting up the video URI into thhe video view
+   call videoView.onpreparelistener
+   sync the mrdia player inside onPrepare
+   checking if there was any saved position to be continued
+   otherwise start the video from start
+   videoView.start()
+   
+   // Play, Pause, Fast forward and Rewind
+   btnPlay.setOnclickListener { Play() }
+   btnPlay.setOnclickListener { Pause() }
+   btnPlay.setOnclickListener { FastForward(10000) }
+   btnPlay.setOnclickListener { Rewind(10000) }
+} 
